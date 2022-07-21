@@ -19,7 +19,7 @@ language_translator = LanguageTranslatorV3(
 language_translator.set_service_url(url)
 
 def english_to_french(english_text):
-    french_text = ''
+    french_text = 'Please enter text to translate'
     if english_text != '':
         french_text = language_translator.translate(
             text=english_text,
@@ -27,9 +27,10 @@ def english_to_french(english_text):
     return french_text
 
 def french_to_english(french_text):
-    english_text = ''
+    english_text = 'Please enter text to translate'
     if french_text != '':
         english_text = language_translator.translate(
             text=french_text,
             model_id='fr-en').get_result().get("translations")[0].get("translation")
     return english_text
+
